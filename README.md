@@ -75,7 +75,7 @@ build_medicalgraph.py：知识图谱入库脚本    　　
 
 
 
-# zong
+# 总结
 
 
 
