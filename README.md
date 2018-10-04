@@ -2,6 +2,8 @@
 self-implement of disease centered Medical graph from zero to full and sever as question answering base. 从无到有搭建一个以疾病为中心的一定规模医药领域知识图谱，并以该知识图谱完成自动问答与分析服务。
 
 
+# 业务驱动的知识图谱构建框架
+![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/kg_route.png)
 
 # 医药领域知识图谱规模
 1、 neo4j图数据库存储规模
@@ -23,7 +25,7 @@ self-implement of disease centered Medical graph from zero to full and sever as 
 
 3、 知识图谱实体关系类型
 
-| 实体关系类型 | 中文含义 | 实体数量 | 举例|
+| 实体关系类型 | 中文含义 | 关系数量 | 举例|
 | :--- | :---: | :---: | :--- |
 | belongs_to | 属于 | 8,844| <妇科,属于,妇产科>|
 | common_drug | 疾病常用药品 | 14,649 | <阳强,常用,甲磺酸酚妥拉明分散片>|
