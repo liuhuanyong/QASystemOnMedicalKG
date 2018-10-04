@@ -1,16 +1,29 @@
 # QABasedOnMedicaKnowledgeGraph
 self-implement of disease centered Medical graph from zero to full and sever as question answering base. 从无到有搭建一个以疾病为中心的一定规模医药领域知识图谱，并以该知识图谱完成自动问答与分析服务。
 
+# 项目介绍
+知识图谱是目前自然语言处理的一个热门方向，本人有幸参加了ckks2018会议，并得到一些收获，可以查看我的ccks2018参会总结(https://github.com/liuhuanyong/CCKS2018Summary)。
+与知识图谱相关的另一种形态，即事理图谱，本人在这方面也尝试性地积累了一些工作，可参考：(https://github.com/liuhuanyong/ComplexEventExtraction)
+关于知识图谱概念性的介绍就不在此赘述。目前知识图谱在各个领域全面开花，如教育、医疗、司法、金融等。本项目立足医药领域，以垂直型医药网站为数据来源，以疾病为核心，构建起一个包含7类规模为4.4万的知识实体，11类规模约30万的知识图谱。  
+本项目将包括以下两部分的内容：
+1) 基于垂直网站数据的医药知识图谱构建
+2) 基于医药知识图谱的自动问答
 
-# 业务驱动的知识图谱构建框架
+# 一、医疗知识图谱构建
+# 1.1 业务驱动的知识图谱构建框架
 ![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/kg_route.png)
 
-# 医药领域知识图谱规模
-1、 neo4j图数据库存储规模
+# 1.2 脚本目录
+prepare_data/datasoider.py：网络资讯采集脚本
+prepare_data/datasoider.py：网络资讯采集脚本
+prepare_data/max_cut.py：基于词典的最大向前/向后切分脚本
+build_medicalgraph.py：知识图谱入库脚本  　　
 
+# 1.3 医药领域知识图谱规模
+1.3.1 neo4j图数据库存储规模
 ![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/graph_summary.png)
 
-2、知识图谱实体类型
+1.3.2 知识图谱实体类型
 
 | 实体类型 | 中文含义 | 实体数量 |举例 |
 | :--- | :---: | :---: | :--- |
@@ -23,7 +36,7 @@ self-implement of disease centered Medical graph from zero to full and sever as 
 | Symptom | 疾病症状 | 5,998 |  乳腺组织肥厚;脑实质深部出血|
 | Total | 总计 | 44,111 | 约4.4万实体量级|
 
-3、 知识图谱实体关系类型
+1.3.3 知识图谱实体关系类型
 
 | 实体关系类型 | 中文含义 | 关系数量 | 举例|
 | :--- | :---: | :---: | :--- |
@@ -39,7 +52,7 @@ self-implement of disease centered Medical graph from zero to full and sever as 
 | acompany_with | 疾病并发疾病 | 12,029 | <下肢交通静脉瓣膜关闭不全,并发疾病,血栓闭塞性脉管炎>|
 | Total | 总计 | 294,149 | 约30万关系量级|
 
-4、知识图谱属性类型
+1.3.4 知识图谱属性类型
 
 | 属性类型 | 中文含义 | 举例 |
 | :--- | :---: | :---: |
@@ -51,6 +64,18 @@ self-implement of disease centered Medical graph from zero to full and sever as 
 | cure_way | 治疗方式 | "药物治疗","支持性治疗" |
 | cured_prob | 治愈概率 | 95% |
 | easy_get | 疾病易感人群 | 无特定的人群 |
+
+
+# 二、基于医疗知识图谱的自动问答
+# 2.1 技术架构
+
+# 2.2 脚本结构
+
+# 2.3 效果展示
+
+
+
+# zong
 
 
 
