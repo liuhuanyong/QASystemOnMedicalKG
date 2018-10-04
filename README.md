@@ -19,7 +19,7 @@ self-implement of disease centered Medical graph from zero to full and sever as 
 | Food | 食物 | 4,870 |  番茄冲菜牛肉丸汤;竹笋炖羊肉|
 | Producer | 在售药品 | 17,201 |  通药制药青霉素V钾片;青阳醋酸地塞米松片|
 | Symptom | 疾病症状 | 5,998 |  乳腺组织肥厚;脑实质深部出血|
-| Total | 总计 | 44,111 | 约4.4万关系量级|
+| Total | 总计 | 44,111 | 约4.4万实体量级|
 
 3、 知识图谱实体关系类型
 
