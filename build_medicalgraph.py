@@ -11,7 +11,7 @@ from py2neo import Graph,Node
 class MedicalGraph:
     def __init__(self):
         cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])
-        self.data_path = os.path.join(cur_dir, 'medical.json')
+        self.data_path = os.path.join(cur_dir, 'data/medical.json')
         self.g = Graph(
             host="127.0.0.1",  # neo4j 搭载服务器的ip地址，ifconfig可获取到
             http_port=7474,  # neo4j 服务器监听的端口号
@@ -212,7 +212,6 @@ class MedicalGraph:
         self.create_relationship('Disease', 'Disease', rels_acompany, 'acompany_with', '并发症')
         self.create_relationship('Disease', 'Department', rels_category, 'belongs_to', '所属科室')
 
-
     '''创建实体关联边'''
     def create_relationship(self, start_node, end_node, edges, rel_type, rel_name):
         count = 0
@@ -233,10 +232,39 @@ class MedicalGraph:
                 print(rel_type, count, all)
             except Exception as e:
                 print(e)
+        return
+
+    '''导出数据'''
+    def export_data(self):
+        Drugs, Foods, Checks, Departments, Producers, Symptoms, Diseases, disease_infos, rels_check, rels_recommandeat, rels_noteat, rels_doeat, rels_department, rels_commonddrug, rels_drug_producer, rels_recommanddrug, rels_symptom, rels_acompany, rels_category = self.read_nodes()
+        f_drug = open('drug.txt', 'w+')
+        f_food = open('food.txt', 'w+')
+        f_check = open('check.txt', 'w+')
+        f_department = open('department.txt', 'w+')
+        f_producer = open('producer.txt', 'w+')
+        f_symptom = open('symptoms.txt', 'w+')
+        f_disease = open('disease.txt', 'w+')
+
+        f_drug.write('\n'.join(list(Drugs)))
+        f_food.write('\n'.join(list(Foods)))
+        f_check.write('\n'.join(list(Checks)))
+        f_department.write('\n'.join(list(Departments)))
+        f_producer.write('\n'.join(list(Producers)))
+        f_symptom.write('\n'.join(list(Symptoms)))
+        f_disease.write('\n'.join(list(Diseases)))
+
+        f_drug.close()
+        f_food.close()
+        f_check.close()
+        f_department.close()
+        f_producer.close()
+        f_symptom.close()
+        f_disease.close()
 
         return
 
 
+
 if __name__ == '__main__':
     handler = MedicalGraph()
-    handler.create_graphrels()
+    # handler.export_data()

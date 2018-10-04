@@ -133,5 +133,6 @@ class MedicalGraph:
             self.db['jc'].update({'url':url}, {'$set':{'name':name, 'desc':desc}})
 
 
-handler = MedicalGraph()
-handler.collect_medical()
+
+if __name__ == '__main__':
+    handler = MedicalGraph()
