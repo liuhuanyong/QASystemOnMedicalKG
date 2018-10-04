@@ -6,7 +6,7 @@ self-implement of disease centered Medical graph from zero to full and sever as 
 # 医药领域知识图谱规模
 1、 neo4j图数据库存储规模
 
-![image](https://github.com/liuhuanyong/SequentialEventGraph/blob/master/imag/graph_summary.png)
+![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/graph_summary.png)
 
 2、知识图谱实体类型
 
