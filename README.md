@@ -78,9 +78,9 @@ build_medicalgraph.py：知识图谱入库脚本    　　
 
 
 # 2.2 脚本结构
-question_classifier.py：问句类型分类脚本
-question_parser.py：问句解析脚本
-chatbot_graph.py：问答程序脚本
+question_classifier.py：问句类型分类脚本  
+question_parser.py：问句解析脚本  
+chatbot_graph.py：问答程序脚本  
 
 # 2.3 效果展示
 
