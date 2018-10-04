@@ -2,9 +2,14 @@
 self-implement of disease centered Medical graph from zero to full and sever as question answering base. 从无到有搭建一个以疾病为中心的一定规模医药领域知识图谱，并以该知识图谱完成自动问答与分析服务。
 
 # 项目介绍
+
 知识图谱是目前自然语言处理的一个热门方向，本人有幸参加了ckks2018会议，并得到一些收获，可以查看我的ccks2018参会总结(https://github.com/liuhuanyong/CCKS2018Summary)。
 与知识图谱相关的另一种形态，即事理图谱，本人在这方面也尝试性地积累了一些工作，可参考：(https://github.com/liuhuanyong/ComplexEventExtraction)
 关于知识图谱概念性的介绍就不在此赘述。目前知识图谱在各个领域全面开花，如教育、医疗、司法、金融等。本项目立足医药领域，以垂直型医药网站为数据来源，以疾病为核心，构建起一个包含7类规模为4.4万的知识实体，11类规模约30万的知识图谱。
+
+知识图谱是目前自然语言处理的一个热门方向，本人有幸参加了ckks2018会议，并得到一些收获，可以查看我的ccks2018参会总结(https://github.com/liuhuanyong/CCKS2018Summary )。  
+与知识图谱相关的另一种形态，即事理图谱，本人在这方面也尝试性地积累了一些工作，可参考：(https://github.com/liuhuanyong/ComplexEventExtraction )  
+关于知识图谱概念性的介绍就不在此赘述。目前知识图谱在各个领域全面开花，如教育、医疗、司法、金融等。本项目立足医药领域，以垂直型医药网站为数据来源，以疾病为核心，构建起一个包含7类规模为4.4万的知识实体，11类规模约30万实体关系的知识图谱。
 本项目将包括以下两部分的内容：
 1) 基于垂直网站数据的医药知识图谱构建
 2) 基于医药知识图谱的自动问答
@@ -14,10 +19,10 @@ self-implement of disease centered Medical graph from zero to full and sever as 
 ![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/kg_route.png)
 
 # 1.2 脚本目录
-prepare_data/datasoider.py：网络资讯采集脚本
-prepare_data/datasoider.py：网络资讯采集脚本
-prepare_data/max_cut.py：基于词典的最大向前/向后切分脚本
-build_medicalgraph.py：知识图谱入库脚本  　　
+prepare_data/datasoider.py：网络资讯采集脚本  
+prepare_data/datasoider.py：网络资讯采集脚本  
+prepare_data/max_cut.py：基于词典的最大向前/向后切分脚本  
+build_medicalgraph.py：知识图谱入库脚本    　　
 
 # 1.3 医药领域知识图谱规模
 1.3.1 neo4j图数据库存储规模
