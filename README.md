@@ -16,11 +16,12 @@ self-implement of disease centered Medical graph from zero to full and sever as 
 
 ![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/chat2.png)
 
-# 项目运行：
-1、配置要求：要求配置neo4j数据库及相应的python依赖包。neo4j数据库用户名密码记住，并修改相应文件。
-2、知识图谱数据导入：python build_medicalgraph.py，导入的数据较多，估计需要几个小时。
+# 项目运行方式：
+1、配置要求：要求配置neo4j数据库及相应的python依赖包。neo4j数据库用户名密码记住，并修改相应文件。  
+2、知识图谱数据导入：python build_medicalgraph.py，导入的数据较多，估计需要几个小时。  
 3、启动问答：python chat_graph.py
 
+# 以下介绍详细方案
 # 一、医疗知识图谱构建
 # 1.1 业务驱动的知识图谱构建框架
 ![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/kg_route.png)
@@ -82,27 +83,25 @@ build_medicalgraph.py：知识图谱入库脚本    　　
 # 2.1 技术架构
 ![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/qa_route.png)
 
-
 # 2.2 脚本结构
 question_classifier.py：问句类型分类脚本  
 question_parser.py：问句解析脚本  
 chatbot_graph.py：问答程序脚本  
 
-# 2.3 效果展示
+# 2.3　支持问答类型
 
-be soon....
+
+
+
 
 # 总结
+１、本项目完成了从无到有，以垂直网站为数据来源，构建起以疾病为中心的医疗知识图谱，实体规模4.4万，实体关系规模30万。并基于此，搭建起了一个可以回答18类问题的自动问答小系统,总共耗时3天。其中，数据采集与整理1天，知识图谱构建与入库0.5天，问答系统组件1.5天。总的来说，还是比较快速。      
+2、本项目以业务驱动，构建医疗知识图谱，知识schema设计基于所采集的结构化数据生成(对网页结构化数据进行xpath解析)。    
+3、本项目以neo4j作为存储，并基于传统规则的方式完成了知识问答，并最终以cypher查询语句作为问答搜索sql，支持了问答服务。  
+4、本项目可以快速部署，数据已经放在data/medical.json当中，本项目的数据，如侵犯相关单位权益，请联系我删除。本数据请勿商用，以免引起不必要的纠纷。在本项目中的部署上，可以遵循项目运行步骤，完成数据库搭建，并提供搜索服务。  
+5、本项目还有不足：关于疾病的起因、预防等，实际返回的是一大段文字，这里其实可以引入事件抽取的概念，进一步将原因结构化表示出来。这个可以后面进行尝试。    
 
 If any question about the project or me ,see https://liuhuanyong.github.io/
-
-
-
-
-
-
-
-
 
 
 
