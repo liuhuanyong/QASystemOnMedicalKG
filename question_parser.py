@@ -23,11 +23,10 @@ class QuestionPaser:
         args = res_classify['args']
         entity_dict = self.build_entitydict(args)
         question_types = res_classify['question_types']
-
         sqls = []
-
         for question_type in question_types:
-            # print(question_type)
+            sql_ = {}
+            sql_['question_type'] = question_type
             sql = []
             if question_type == 'disease_symptom':
                 sql = self.sql_transfer(question_type, entity_dict.get('disease'))
@@ -63,7 +62,7 @@ class QuestionPaser:
                 sql = self.sql_transfer(question_type, entity_dict.get('disease'))
 
             elif question_type == 'check_disease':
-                sql = self.sql_transfer(question_type, entity_dict.get('disease'))
+                sql = self.sql_transfer(question_type, entity_dict.get('check'))
 
             elif question_type == 'disease_prevent':
                 sql = self.sql_transfer(question_type, entity_dict.get('disease'))
@@ -84,10 +83,11 @@ class QuestionPaser:
                 sql = self.sql_transfer(question_type, entity_dict.get('disease'))
 
             if sql:
-                sqls += sql
+                sql_['sql'] = sql
+
+                sqls.append(sql_)
 
         return sqls
-
 
     '''针对不同的问题，分开进行处理'''
     def sql_transfer(self, question_type, entities):
@@ -111,6 +111,10 @@ class QuestionPaser:
         # 查询疾病的治愈概率
         elif question_type == 'disease_cureprob':
             sql = ["MATCH (m:Disease) where m.name = '{0}' return m.name, m.cured_prob".format(i) for i in entities]
+
+        # 查询疾病的治疗方式
+        elif question_type == 'disease_cureway':
+            sql = ["MATCH (m:Disease) where m.name = '{0}' return m.name, m.cure_way".format(i) for i in entities]
 
         # 查询疾病的易发人群
         elif question_type == 'disease_easyget':

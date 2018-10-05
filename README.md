@@ -10,6 +10,17 @@ self-implement of disease centered Medical graph from zero to full and sever as 
 1) 基于垂直网站数据的医药知识图谱构建
 2) 基于医药知识图谱的自动问答
 
+# 项目最终效果
+话不多少，直接上图。以下两图是实际问答运行过程中的截图：
+![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/chat1.png)
+
+![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/chat2.png)
+
+# 项目运行：
+1、配置要求：要求配置neo4j数据库及相应的python依赖包。neo4j数据库用户名密码记住，并修改相应文件。
+2、知识图谱数据导入：python build_medicalgraph.py，导入的数据较多，估计需要几个小时。
+3、启动问答：python chat_graph.py
+
 # 一、医疗知识图谱构建
 # 1.1 业务驱动的知识图谱构建框架
 ![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/kg_route.png)
@@ -70,7 +81,6 @@ build_medicalgraph.py：知识图谱入库脚本    　　
 # 二、基于医疗知识图谱的自动问答
 # 2.1 技术架构
 ![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/qa_route.png)
-
 
 
 # 2.2 脚本结构
