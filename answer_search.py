@@ -61,7 +61,7 @@ class AnswerSearcher:
             final_answer = '{0}治疗可能持续的周期为：{1}'.format(subject, '；'.join(list(set(desc))[:self.num_limit]))
 
         elif question_type == 'disease_cureway':
-            desc = [i['m.cure_way'] for i in answers]
+            desc = [';'.join(i['m.cure_way']) for i in answers]
             subject = answers[0]['m.name']
             final_answer = '{0}可以尝试如下治疗：{1}'.format(subject, '；'.join(list(set(desc))[:self.num_limit]))
 
@@ -73,6 +73,7 @@ class AnswerSearcher:
         elif question_type == 'disease_easyget':
             desc = [i['m.easy_get'] for i in answers]
             subject = answers[0]['m.name']
+
             final_answer = '{0}的易感人群包括：{1}'.format(subject, '；'.join(list(set(desc))[:self.num_limit]))
 
         elif question_type == 'disease_desc':

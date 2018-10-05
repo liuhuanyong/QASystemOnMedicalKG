@@ -30,7 +30,7 @@ class ChatBotGraph:
 if __name__ == '__main__':
     handler = ChatBotGraph()
     while 1:
-        question = input('user:')
+        question = input('用户:')
         answer = handler.chat_main(question)
-        print('RoBot:', answer)
+        print('小勇:', answer)
 
