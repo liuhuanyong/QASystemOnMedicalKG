@@ -267,4 +267,8 @@ class MedicalGraph:
 
 if __name__ == '__main__':
     handler = MedicalGraph()
-    # handler.export_data()
+    print("step1:导入图谱节点中")
+    handler.create_graphnodes()
+    print("step2:导入图谱边中")      
+    handler.create_graphrels()
+    
