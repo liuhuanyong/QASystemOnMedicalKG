@@ -47,7 +47,7 @@ class MedicalGraph:
 
 
         count = 0
-        for data in open(self.data_path):
+        for data in open(self.data_path, encoding='utf-8'):
             disease_dict = {}
             count += 1
             print(count)
