@@ -12,6 +12,7 @@ self-implement of disease centered Medical graph from zero to full and sever as 
 
 # 项目最终效果
 话不多少，直接上图。以下两图是实际问答运行过程中的截图：
+
 ![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/chat1.png)
 
 ![image](https://github.com/liuhuanyong/QABasedOnMedicalKnowledgeGraph/blob/master/img/chat2.png)
