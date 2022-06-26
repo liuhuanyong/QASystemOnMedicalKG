@@ -64,10 +64,10 @@ class QuestionClassifier:
         if not medical_dict:
             return {}
         data['args'] = medical_dict
-        #收集问句当中所涉及到的实体类型
+        # 收集问题当中所涉及到的实体类型
         types = []
-        for type_ in medical_dict.values():
-            types += type_
+        for each in medical_dict.values():
+            types.extend(each)
         question_type = 'others'
 
         question_types = []
