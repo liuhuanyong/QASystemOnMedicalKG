@@ -1,0 +1,13 @@
+certifi==2025.11.12
+interchange==2021.0.4
+monotonic==1.6
+packaging==25.0
+pansi==2024.11.0
+pillow==12.0.0
+py2neo==2021.2.4
+pyahocorasick==2.2.0
+pygments==2.19.2
+pytz==2025.2
+six==1.17.0
+tqdm==4.67.1
+urllib3==2.6.1

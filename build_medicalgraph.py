@@ -13,10 +13,12 @@ class MedicalGraph:
         cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])
         self.data_path = os.path.join(cur_dir, 'data/medical.json')
         self.g = Graph(
-            host="127.0.0.1",  # neo4j 搭载服务器的ip地址，ifconfig可获取到
+            host="127.0.0.1",  
             http_port=7474,  # neo4j 服务器监听的端口号
-            user="lhy",  # 数据库user name，如果没有更改过，应该是neo4j
+            user="lhy", 
             password="lhy123")
+        self.g = Graph("bolt://127.0.0.1:7687", # neo4j 搭载服务器的ip地址,端口号
+                       auth=("neo4j", "12345678")) # 数据库user name，如果没有更改过，应该是neo4j, password请改成你自己的密码
 
     '''读取文件'''
     def read_nodes(self):
