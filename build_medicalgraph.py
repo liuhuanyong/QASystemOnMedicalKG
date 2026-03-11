@@ -10,7 +10,7 @@ from py2neo import Graph,Node
 
 class MedicalGraph:
     def __init__(self):
-        cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])
+        cur_dir = os.path.dirname(os.path.abspath(__file__))
         self.data_path = os.path.join(cur_dir, 'data/medical.json')
         self.g = Graph(
             host="127.0.0.1",  # neo4j 搭载服务器的ip地址，ifconfig可获取到
@@ -47,7 +47,7 @@ class MedicalGraph:
 
 
         count = 0
-        for data in open(self.data_path):
+        for data in open(self.data_path, encoding='utf-8'):
             disease_dict = {}
             count += 1
             print(count)
@@ -219,7 +219,7 @@ class MedicalGraph:
         set_edges = []
         for edge in edges:
             set_edges.append('###'.join(edge))
-        all = len(set(set_edges))
+        total = len(set(set_edges))
         for edge in set(set_edges):
             edge = edge.split('###')
             p = edge[0]
@@ -229,7 +229,7 @@ class MedicalGraph:
             try:
                 self.g.run(query)
                 count += 1
-                print(rel_type, count, all)
+                print(rel_type, count, total)
             except Exception as e:
                 print(e)
         return
@@ -237,13 +237,13 @@ class MedicalGraph:
     '''导出数据'''
     def export_data(self):
         Drugs, Foods, Checks, Departments, Producers, Symptoms, Diseases, disease_infos, rels_check, rels_recommandeat, rels_noteat, rels_doeat, rels_department, rels_commonddrug, rels_drug_producer, rels_recommanddrug, rels_symptom, rels_acompany, rels_category = self.read_nodes()
-        f_drug = open('drug.txt', 'w+')
-        f_food = open('food.txt', 'w+')
-        f_check = open('check.txt', 'w+')
-        f_department = open('department.txt', 'w+')
-        f_producer = open('producer.txt', 'w+')
-        f_symptom = open('symptoms.txt', 'w+')
-        f_disease = open('disease.txt', 'w+')
+        f_drug = open('drug.txt', 'w+', encoding='utf-8')
+        f_food = open('food.txt', 'w+', encoding='utf-8')
+        f_check = open('check.txt', 'w+', encoding='utf-8')
+        f_department = open('department.txt', 'w+', encoding='utf-8')
+        f_producer = open('producer.txt', 'w+', encoding='utf-8')
+        f_symptom = open('symptoms.txt', 'w+', encoding='utf-8')
+        f_disease = open('disease.txt', 'w+', encoding='utf-8')
 
         f_drug.write('\n'.join(list(Drugs)))
         f_food.write('\n'.join(list(Foods)))
