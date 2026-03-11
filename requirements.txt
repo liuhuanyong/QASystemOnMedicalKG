@@ -1,0 +1,2 @@
+py2neo>=2021.1
+pyahocorasick>=1.4.0
